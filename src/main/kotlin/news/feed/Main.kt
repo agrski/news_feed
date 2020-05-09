@@ -8,14 +8,14 @@ import io.ktor.server.engine.*
 import io.ktor.server.netty.*
 
 fun main(args: Array<String>) {
-  val port = 8080
+    val port = 8080
 
-  embeddedServer(Netty, port) {
-    routing {
-      get("/") {
-        call.respondText("Hello world", ContentType.Text.Html)
-      }
+    embeddedServer(Netty, port) {
+        routing {
+            get("/") {
+                call.respondText("Hello world", ContentType.Text.Html)
+            }
+        }
     }
-  }
-  .start(wait = true)
+    .start(wait = true)
 }
