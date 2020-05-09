@@ -19,12 +19,6 @@ repositories {
   jcenter()
 }
 
-kotlin {
-  experimental {
-    coroutines 'enable'
-  }
-}
-
 version = '0.1.1'
 mainClassName = "news.feed.MainKt"
 description = 'News Feed Aggregator'
