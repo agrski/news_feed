@@ -6,16 +6,28 @@ import io.ktor.response.*
 import io.ktor.routing.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
+import io.ktor.features.DefaultHeaders
 
 fun main(args: Array<String>) {
     val port = 8080
 
-    embeddedServer(Netty, port) {
-        routing {
-            get("/") {
-                call.respondText("Hello world", ContentType.Text.Html)
-            }
-        }
+    embeddedServer(
+        Netty,
+        port = port,
+        module = Application::main
+    ).start(wait = true)
+}
+
+fun Application.main() {
+    install(DefaultHeaders)
+
+    routing {
+        root()
     }
-    .start(wait = true)
+}
+
+fun Routing.root() {
+    get("/") {
+        call.respondText("<h1>News Feed</h1>", ContentType.Text.Html)
+    }
 }
