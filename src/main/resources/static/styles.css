@@ -1,0 +1,38 @@
+body {
+  background: white
+}
+
+div.main {
+  margin: auto;
+  width: 70%;
+}
+
+.topbar {
+  position: fixed;
+  left: 0px;
+  width: 100%;
+  top: 0px;
+  height: 60px;
+  background: #0000DD;
+  opacity: 1.0;
+  z-index: 10;
+}
+
+.topbar h1 {
+  text-align: center;
+  color: #FFFFFF;
+}
+
+section.news {
+  background: #CCE6FF;
+  position: relative;
+  margin-top: 80px;
+}
+
+article.news {
+  text-align: left;
+}
+
+hr {
+  color: #99CCFF;
+}
