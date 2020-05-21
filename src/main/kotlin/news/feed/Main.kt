@@ -22,12 +22,8 @@ fun Application.main() {
     install(DefaultHeaders)
 
     routing {
-        root()
+        staticRoute()
+        home()
     }
 }
 
-fun Routing.root() {
-    get("/") {
-        call.respondText("<h1>News Feed</h1>", ContentType.Text.Html)
-    }
-}
