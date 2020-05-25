@@ -8,8 +8,13 @@ import io.ktor.response.respondText
 import io.ktor.routing.Route
 
 fun Route.home() {
-    static("/") {
-        log("Serving resource home.html on /")
-        defaultResource("home.html", "static")
+    listOf("/", "/index.html").forEach { homePath ->
+        val resourceName = "home.html"
+        val resourceFolder = "static"
+
+        static(homePath) {
+            log("Serving resource ${resourceName} on ${homePath}")
+            defaultResource(resourceName, resourceFolder)
+        }
     }
 }
