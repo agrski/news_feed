@@ -8,7 +8,8 @@ import io.ktor.response.respondText
 import io.ktor.routing.Route
 
 fun Route.home() {
-    static("/"){
+    static("/") {
+        log("Serving resource home.html on /")
         defaultResource("home.html", "static")
     }
 }
