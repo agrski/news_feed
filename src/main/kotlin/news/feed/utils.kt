@@ -6,7 +6,7 @@ import org.slf4j.event.Level
 fun Route.log(msg: String, level: Level = Level.INFO) {
     val logger = this.application.environment.log
 
-    val levelLogger: (String) -> Unit = when(level) {
+    val logAtLevelFor: (String) -> Unit = when(level) {
         Level.TRACE -> logger::debug
         Level.DEBUG -> logger::debug
         Level.INFO  -> logger::info
@@ -14,5 +14,5 @@ fun Route.log(msg: String, level: Level = Level.INFO) {
         Level.ERROR -> logger::error
     }
 
-    levelLogger(msg)
+    logAtLevelFor(msg)
 }
